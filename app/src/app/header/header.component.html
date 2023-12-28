@@ -3,25 +3,31 @@
   <div class='flex items-center space-x-2 md:space-x-8'>
 
     <!-- BEGIN LOGO -->
-    <img src='https://rb.gy/ulxxee' alt='netflix' width="90" height="90" />
+    <a routerLink='/'>
+      <img src='https://rb.gy/ulxxee' alt='netflix' width="90" height="90" />
+    </a>
     <!-- END LOGO -->
 
     <!-- BEGIN NAVLINKS -->
     <nav>
       <ul class='hidden md:flex md:space-x-4'>
-        <li>Home</li>
-        <li>TV Shows</li>
-        <li>Movies</li>
-        <li>Latest</li>
+        <a [routerLink]="['/search']" [queryParams]="{genre: 'Comedy'}">Comedy</a>
+        <a [routerLink]="['/search']" [queryParams]="{genre: 'Action'}"> Action </a>
+        <a [routerLink]="['/search']" [queryParams]="{genre: 'Adventure'}">Adventure</a>
+        <a [routerLink]="['/search']" [queryParams]="{genre: 'Animation'}"> Animation </a>
       </ul>
     </nav>
     <!-- END NAVLINKS -->
   </div>
 
   <!-- BEGIN USER PROFILES -->
-  <div class='flex items-center space-x-4'>
+  <div class='flex items-center space-x-2 md:space-x-8'>
+
+    <app-search-form [onSearch]="onSearch" [searchTerm]="searchTerm" />
+
     <p class='hidden cursor-not-allowed lg:inline'>Kids</p>
     <img width=30 height=30 src='/assets/profile.png' alt='Profile' class='cursor-pointer rounded' />
   </div>
   <!-- END USER PROFILES -->
 </header>
+<router-outlet></router-outlet>
