@@ -1,1 +1,6 @@
 .npm
+.bash_history
+.cache
+.config
+.pki
+.local
