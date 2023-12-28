@@ -1,0 +1,7 @@
+<form #f="ngForm" (ngSubmit)="onSearch(f)" class='flex items-center space-x-2'>
+  <button type='submit'>
+    <ng-icon name="heroMagnifyingGlass" size="1.5rem" class='h-6 w-6 text-gray-400 mt-2'></ng-icon>
+  </button>
+  <input type='search' id='search' name='search' placeholder='Search' value={{searchTerm}} name="search" ngModel
+    required #search="ngModel" class='bg-transparent text-white placeholder-white outline-none'>
+</form>
