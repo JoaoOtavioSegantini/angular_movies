@@ -1,0 +1,28 @@
+<div *ngIf="movies?.length === 0">
+  <div class='relative bg-gradient-to-b pb-8'>
+    <app-header />
+    <main class='relative mb-48 mt-20 h-screen pl-4 lg:pl-16 '>
+      <h1 class='mb-4 text-2xl font-bold'>
+        Search results for: <span class='text-red-500'>{{searchParams?.title }}</span>
+      </h1>
+      <p class='text-xl'>No movies found</p>
+    </main>
+  </div>
+</div>
+
+
+<div *ngIf="movies?.length && movies!.length > 0">
+  <div class='relative bg-gradient-to-b pb-8'>
+    <app-header />
+    <main class='relative mb-48 mt-20 h-screen pl-4 lg:pl-16 '>
+      <h1 class='mb-4 text-2xl font-bold'>
+        Search results for: <span class='text-red-500'>{{searchParams?.genre}}</span>
+      </h1>
+      <div class='grid grid-cols-2 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-8 lg:gap-8'>
+        <div *ngFor="let movie of movies">
+          <app-movie-card [movie]="movie" />
+        </div>
+      </div>
+    </main>
+  </div>
+</div>
