@@ -1,7 +1,8 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { NgIconComponent, provideIcons } from '@ng-icons/core';
 import { heroInformationCircle, heroPlay } from '@ng-icons/heroicons/outline';
+import { Movie } from '../../typings/movie';
 
 @Component({
   selector: 'app-banner',
@@ -11,4 +12,7 @@ import { heroInformationCircle, heroPlay } from '@ng-icons/heroicons/outline';
   styleUrl: './banner.component.css',
   providers: [provideIcons({ heroInformationCircle, heroPlay })],
 })
-export class BannerComponent {}
+export class BannerComponent {
+  @Input({ required: true })
+  movie: Movie | undefined;
+}
