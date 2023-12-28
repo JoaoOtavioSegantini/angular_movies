@@ -1,6 +1,10 @@
-<div class='relative h-screen overflow-hidden bg-gradient-to-b lg:h-[140vh]'>
+<div class='relative bg-gradient-to-b pb-8'>
   <app-header></app-header>
-  <main class='relative pb-24 pl-4 lg:pl-16'>
-    <app-banner></app-banner>
+  <main class='relative overflow-y-scroll p-8 pb-20 scrollbar-hide lg:px-16 '>
+
+    <app-banner [movie]="this.featuredMovie"></app-banner>
+    @for(movie of movies; track movie) {
+    <app-movie-row [movies]="movie.movies" [sectionTitle]="movie.sectionTitle" />
+    }
   </main>
 </div>
