@@ -1,0 +1,5 @@
+@import "vidstack/player/styles/base.css";
+
+[data-media-player][data-playing] .media-playing\:opacity-0 {
+  opacity: 0;
+}
