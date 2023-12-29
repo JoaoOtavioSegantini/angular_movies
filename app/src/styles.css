@@ -2,7 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-
 .bg-gradient-to-b {
   background-image: linear-gradient(
     to bottom,
@@ -18,5 +17,9 @@
 @layer base {
   body {
     @apply bg-[#383838] text-white;
+  }
+
+  video {
+    @apply w-full;
   }
 }
