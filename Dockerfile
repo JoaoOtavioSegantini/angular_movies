@@ -1,8 +1,8 @@
-FROM node:21.5.0-slim
+FROM node:20.10.0-slim
 
 ENV PUPPETEER_SKIP_CHROMIUM_DOWNLOAD true
 ENV DISPLAY host.docker.internal:0.0
-ENV CHROME_BIN='/usr/bin/chromium'
+ENV CHROME_BIN='/usr/bin/google-chrome'
 RUN chown -R node:node /usr /var
 
 RUN apt-get update && apt-get install gnupg wget -y && \
