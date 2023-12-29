@@ -1,0 +1,12 @@
+<div *ngIf="!movie; else haveMovie" class='flex h-screen justify-center align-middle'>
+  <app-header />
+  <main class='flex flex-1 flex-col items-center justify-center px-20 text-center'>
+    <h1 class='text-2xl font-bold md:text-4xl lg:text-7xl'>
+      Sorry, this movie is not available.
+    </h1>
+  </main>
+</div>
+
+<ng-template #haveMovie>
+  <app-player [movie]="movie" />
+</ng-template>
