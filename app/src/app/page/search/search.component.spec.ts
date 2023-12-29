@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { SearchComponent } from './search.component';
+import { ActivatedRoute } from '@angular/router';
 
 describe('SearchComponent', () => {
   let component: SearchComponent;
@@ -8,10 +9,17 @@ describe('SearchComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [SearchComponent]
-    })
-    .compileComponents();
-    
+      imports: [SearchComponent],
+      providers: [
+        {
+          provide: ActivatedRoute,
+          useValue: {
+            snapshot: { params: { id: 1 } },
+          },
+        },
+      ],
+    }).compileComponents();
+
     fixture = TestBed.createComponent(SearchComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
