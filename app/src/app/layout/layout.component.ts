@@ -5,7 +5,7 @@ import { HeaderComponent } from '../header/header.component';
 import { BannerComponent } from '../banner/banner.component';
 import { MovieRowComponent } from '../movie-row/movie-row.component';
 import { MovieServiceService } from '../service/movie-service.service';
-import { IMovies, Movie } from '../../typings/movie';
+import { IMovies, Movie } from '../../typings/Movie';
 
 @Component({
   selector: 'app-layout',
@@ -22,9 +22,12 @@ import { IMovies, Movie } from '../../typings/movie';
 })
 export class LayoutComponent implements OnInit {
   title = 'app';
-  service = new MovieServiceService();
   featuredMovie: Movie | undefined;
   movies!: IMovies;
+
+  constructor(private readonly service: MovieServiceService) {
+    this.service = new MovieServiceService();
+  }
 
   async ngOnInit(): Promise<void> {
     this.featuredMovie = await this.service.getFeaturedMovie('106');
@@ -40,4 +43,3 @@ export class LayoutComponent implements OnInit {
     );
   }
 }
-

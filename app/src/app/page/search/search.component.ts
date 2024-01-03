@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ISearchProps } from '../../../typings/params';
 import { CommonModule } from '@angular/common';
-import { Movie } from '../../../typings/movie';
+import { Movie } from '../../../typings/Movie';
 import { HeaderComponent } from '../../header/header.component';
 import { MovieCardComponent } from '../../movie-card/movie-card.component';
 import { MovieServiceService } from '../../service/movie-service.service';
@@ -18,11 +18,14 @@ import { switchMap } from 'rxjs/operators';
 export class SearchComponent implements OnInit {
   movies: Movie[] | undefined;
 
-  service = new MovieServiceService();
-
   searchParams: ISearchProps | undefined;
 
-  constructor(private route: ActivatedRoute) {}
+  constructor(
+    private readonly route: ActivatedRoute,
+    private readonly service: MovieServiceService
+  ) {
+    this.service = new MovieServiceService();
+  }
 
   async ngOnInit() {
     this.route.queryParams
