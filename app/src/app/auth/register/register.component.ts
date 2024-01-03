@@ -1,12 +1,17 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { LayoutComponent } from '../layout/layout.component';
+import { AuthFormComponent } from '../auth-form/auth-form.component';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-register',
   standalone: true,
   templateUrl: './register.component.html',
   styleUrl: './register.component.css',
-  imports: [CommonModule, LayoutComponent],
+  imports: [CommonModule, AuthFormComponent],
 })
-export class RegisterComponent {}
+export class RegisterComponent {
+  handleSubmit(f: NgForm) {
+    alert(`submit from register with ${f.form.value} values`);
+  }
+}
