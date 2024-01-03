@@ -11,10 +11,10 @@
     <!-- BEGIN NAVLINKS -->
     <nav>
       <ul class='hidden md:flex md:space-x-4'>
-        <a [routerLink]="['/search']" [queryParams]="{genre: 'Comedy'}">Comedy</a>
-        <a [routerLink]="['/search']" [queryParams]="{genre: 'Action'}"> Action </a>
-        <a [routerLink]="['/search']" [queryParams]="{genre: 'Adventure'}">Adventure</a>
-        <a [routerLink]="['/search']" [queryParams]="{genre: 'Animation'}"> Animation </a>
+        <a [routerLink]="['/search']" [queryParams]="{genre: 'Comedy'}" queryParamsHandling="merge">Comedy</a>
+        <a [routerLink]="['/search']" [queryParams]="{genre: 'Action'}" queryParamsHandling="merge"> Action </a>
+        <a [routerLink]="['/search']" [queryParams]="{genre: 'Adventure'}" queryParamsHandling="merge">Adventure</a>
+        <a [routerLink]="['/search']" [queryParams]="{genre: 'Animation'}" queryParamsHandling="merge"> Animation </a>
       </ul>
     </nav>
     <!-- END NAVLINKS -->
