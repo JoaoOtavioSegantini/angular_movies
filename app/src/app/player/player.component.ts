@@ -2,7 +2,7 @@ import { CUSTOM_ELEMENTS_SCHEMA, Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { NgIconComponent, provideIcons } from '@ng-icons/core';
 import { heroArrowLeft } from '@ng-icons/heroicons/outline';
-import { Movie } from '../../typings/movie';
+import { Movie } from '../../typings/Movie';
 import 'vidstack/player';
 import 'vidstack/player/ui';
 

@@ -2,7 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component, Input } from '@angular/core';
 import { NgIconComponent, provideIcons } from '@ng-icons/core';
 import { heroInformationCircle, heroPlay } from '@ng-icons/heroicons/outline';
-import { Movie } from '../../typings/movie';
+import { Movie } from '../../typings/Movie';
 
 @Component({
   selector: 'app-banner',

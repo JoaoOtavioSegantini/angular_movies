@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { ApiRequestService } from './api-request.service';
-import { Movie, Movies } from '../../typings/movie';
+import { Movie, Movies } from '../../typings/Movie';
 import { RequestOptions } from '../../typings/api-request';
 
 @Injectable({

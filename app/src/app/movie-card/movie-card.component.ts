@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { Movie } from '../../typings/movie';
+import { Movie } from '../../typings/Movie';
 import { CommonModule } from '@angular/common';
 import { MovieInfoComponent } from '../movie-info/movie-info.component';
 

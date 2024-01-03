@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component, Input } from '@angular/core';
 import { MovieCardComponent } from '../movie-card/movie-card.component';
-import { Movie } from '../../typings/movie';
+import { Movie } from '../../typings/Movie';
 
 @Component({
   selector: 'app-movie-row',
@@ -11,7 +11,7 @@ import { Movie } from '../../typings/movie';
   imports: [CommonModule, MovieCardComponent],
 })
 export class MovieRowComponent {
-  @Input()
+  @Input({ required: true })
   movies: Movie[] | undefined;
 
   @Input({ required: true })
