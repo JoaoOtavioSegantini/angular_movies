@@ -6,6 +6,8 @@ module.exports = {
   },
   plugins: [
     require("tailwind-scrollbar-hide"),
-    require("vidstack/tailwind.cjs"),
+    require("vidstack/tailwind.cjs")({
+      prefix: "media",
+    }),
   ],
 };
