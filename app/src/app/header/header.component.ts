@@ -21,7 +21,10 @@ export class HeaderComponent {
   isScrolled = false;
   searchTerm: string | undefined;
 
-  constructor(private route: ActivatedRoute, private router: Router) {}
+  constructor(
+    private readonly route: ActivatedRoute,
+    private readonly router: Router
+  ) {}
 
   @HostListener('window:scroll', ['$event.target']) // for scroll events of the current element
   handleScroll(event: Scroll) {
